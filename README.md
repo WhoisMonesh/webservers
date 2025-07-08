@@ -46,12 +46,16 @@ A production-grade collection of configurations, benchmarks, and best practices 
 - Git
 - Docker (optional)
 
-```bash
-# Clone repository
-git clone https://github.com/yourusername/web-servers.git
-cd web-servers
 
-# Setup specific technology
-cd apache  # or tomcat/flask/nodejs
+graph TD
+    A[Client] --> B{Web Server}
+    B -->|Static Content| C[Apache]
+    B -->|Java Apps| D[Tomcat]
+    B -->|Microservices| E[Flask]
+    B -->|Real-time| F[Node.js]
+    C --> G[Database]
+    D --> G
+    E --> G
+    F --> G
 
-# Follow the detailed setup guide in each directory's README
+

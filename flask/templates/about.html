@@ -1,0 +1,18 @@
+﻿{% extends "example-template.html" %}
+
+{% block content %}
+    <h1>About This Application</h1>
+    <p>This is a Flask web application demonstrating various features.</p>
+    
+    <h2>API Example</h2>
+    <button id="fetchData">Fetch Data</button>
+    <div id="apiResult"></div>
+    
+    <script>
+        document.getElementById('fetchData').addEventListener('click', async () => {
+            const response = await fetch('/api/data');
+            const data = await response.json();
+            document.getElementById('apiResult').textContent = JSON.stringify(data);
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,11 @@
+﻿{% extends "example-template.html" %}
+
+{% block content %}
+    <h1>Welcome to Flask!</h1>
+    <p>This is the home page of your Flask application.</p>
+    
+    <form action="{{ url_for('submit_form') }}" method="post">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
